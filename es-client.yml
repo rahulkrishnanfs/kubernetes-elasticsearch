@@ -1,23 +1,23 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: elasticsearch-master
+  name: elasticsearch-client
   labels:
     app: elastic
     deployment: production
-    role: master
+    role: client
 spec:
   replicas: 1
   template:
     metadata:
-      name: elasticsearch-master
+      name: elasticsearch-client
       labels:
         app: elastic
         deployment: production
-        role: master
+        role: client
     spec:
       containers:
-        - name: elasticsearch-master
+        - name: elasticsearch-client
           image: rahulkrishnanfs/docker-elasticsearch-kubernetes:1.0
           ports:
             - containerPort: 9200
@@ -34,7 +34,7 @@ spec:
             - name: CLUSTER_NAME
               value: "elastic"
             - name: NODE_MASTER
-              value: "true"
+              value: "false"
             - name: NODE_DATA
               value: "false"
             - name: NODE_MAX_LOCAL_STORAGE_NODES
