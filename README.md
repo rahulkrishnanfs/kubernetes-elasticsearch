@@ -57,7 +57,7 @@ Kubernetes configuration for elasticsearch cluster
 
 
 
-!['o' output](http://i.imgur.com/CcptHnN.png)
+!['o' output](http://i.imgur.com/B3y5onq.png)
 
 
 
